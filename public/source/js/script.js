@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * The iceServers on this example are public and can be used for your project.
      */
     var peer = new Peer({
-        host: "192.168.8.101",
+        host: "192.168.8.112",
         port: 9000,
         path: '/peerjs',
         debug: 3,
@@ -97,15 +97,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
         // Request audio an video
-        navigator.getUserMedia({ audio: true, video: {
-            mandatory: {
-                minWidth: 640,
-                minHeight: 480,
-                /*Added by Chad*/
-                maxWidth: 640,
-                maxHeight: 480
-            }
-        } }, callbacks.success , callbacks.error);
+        navigator.getUserMedia({ audio: true, video: true }, callbacks.success , callbacks.error);
     }
 
     /**
